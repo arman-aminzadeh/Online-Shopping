@@ -1,0 +1,24 @@
+<div class="vav-header">
+    <div class="title">
+        <a class="title-link" href="http://localhost:3000">
+            Online Shopp
+        </a>
+    </div>
+    <div class="nav">
+            <div class="nav-items">
+                <% if (user) { %>
+                    <div class="nav-item-1">
+                        <p>Welcome</p>
+                        <a href="/me"><img src="img/users/<%= user.photo %>" alt="<%= user.username %>"></a>
+                        <div class="nav-item">
+                            <a class="btn-log-out" href="/">Log Out</a>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="nav-item"><a class="btn-sign-up" href="/api/v1/users/signup">Sign Up</a></div>
+                    <div class="nav-item"><a class="btn-log-in" href="/login">Log In</a></div>
+                <% } %>
+            </div>
+    </div>
+</div>
+

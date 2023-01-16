@@ -1,0 +1,79 @@
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="items">
+            <div class="setting"><a href="#">Setting</a></div>
+            <br>
+            <div class="my-purchase"><a href="">My Purchase</a></div>
+            <br>
+            <div class="my-reviews"><a href="">My Reviews</a></div>
+            <br>
+            <div class="billing"><a href="">Billings</a></div>
+        </div>
+        <% if(user.role === "admin") { %>
+            <div class="admin">
+                <div class="admin-items">
+                    <p>ADMIN</p>
+                    <div class="setting"><a href="">Manage</a></div>
+                    <br>
+                    <div class="my-purchase"><a href="">Manage Users</a></div>
+                    <br>
+                    <div class="my-reviews"><a href="">Manage Reviews</a></div>
+                    <br>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <div class="information">
+        <!-- <div class="title">
+            YOUR ACCOUNT SETTING
+        </div> -->
+        <!-- with express url encooded -->
+        <!-- <form class="user-update" action="/submit-user-data" method="POST"> -->
+        <!-- using API -->
+        <form class="user-update">
+            <div class="user-info-update">
+                <% if(user) { %>
+                    <div class="user-username">
+                        <label for="username">Username:</label>
+                        <input type="text" placeholder="Change Username" class="new-username" value="<%= user.username %>" name="username" >
+                    </div>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Change Email" class="new-email" value="<%= user.email %>" name="email" >
+                    </div>
+                    <div class="user-photo">
+                        <img src="img/users/<%= user.photo %>" alt="" class="user-img">
+                        <!-- <div class="new-photo"><a href="">Choose new photo</a></div> -->
+                        <input type="file" accept="image/*" class="new-photo" id="photo" name="photo">
+                        <label for="photo"></label>
+                    </div>
+                <% } %>
+            </div>
+            <div>
+                <button type="submit" class="save-setting">Save Changes</button>
+            </div>
+        </form>
+        <!-- <div class="title">
+            UPDATE YOUR PASSWORD
+        </div> -->
+        <form class="user-pass-update">
+            <div class="password-change">
+                    <div class="current-password">
+                        <label for="current password" class="cur-pass">Current Password</label>
+                        <input type="text" class="current-pass" placeholder="Current Password">
+                    </div>
+                    <div class="new-password">
+                        <label for="new password" class="new-pass">New Password</label>
+                        <input type="text" class="new-pass" placeholder="New Password">
+                    </div>
+                    <div class="new-password">
+                        <label for="new password" class="new-pass">Confirm New Password</label>
+                        <input type="text" class="new-pass-confirm" placeholder="Confirm New Password">
+                    </div>
+                <div>
+                    <button class="save-setting">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

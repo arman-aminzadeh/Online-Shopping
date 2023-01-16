@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "OnePlus 9 Pro 5G Dual SIM-fri smartphone",
+    "availibility": 7,
+    "description": "48MP huvudkamera, 50MP ultrabred, tele- och svartvittkamera - Utvecklad av Hasselblad, erbjuder den unika Hasselblad-smarttelefonkameran många framsteg, till exempel funktionen för naturlig färgkalibrering.",
+    "price": 6.99,
+    "imageCover": "pro-1-cover.jpg",
+    "images": ["pro-1-1.jpg", "pro-1-2.jpg", "pro-1-3.jpg"],
+    "ratingsAverage": 4.3,
+    "retingsQuantity": 3
+  },
+  {
+    "id": 2,
+    "title": "Xiaomi Poco F3 16.9 cm (6.67) Dual SIM MIUI 12 5G USB",
+    "availibility": 4,
+    "description": "The Real Beast is here We listened to you and created the most powerful POCO so far. A faster and stronger device with no compromises. This beast features a powerful processor, lightning fast storage, a brand new high refresh rate AMOLED screen, and that is just the beginning.",
+    "price": 4.005,
+    "imageCover": "pro-2-cover.jpg",
+    "images": ["pro-2-1.jpg", "pro-2-2.jpg", "pro-2-3.jpg"],
+    "ratingsAverage": 3.8,
+    "retingsQuantity": 5
+  },
+  {
+    "id": 3,
+    "title": "Samsung, 8806090155369, mobiltelefoner och smartphonesvit",
+    "availibility": 2,
+    "description": "Samsung Galaxy A30S mobiltelefon i vit, 4G-anslutning, dual -SIM, 6,4-tums super-AMOLED-HD + bildskärm, 1560 x 720 pixel, 25 5 + 8MP trefack huvudkamera med LED-blixt, 4G, dual -SIM, Android 9 st., Samsung One UI, Octa-Core Exynos 7904 1,8 GHz processor, mikro sd plats upp till 512 GB, intern 64 GB, 4 GB RAM, sekundär kamera med 16 MP selfies, fingeravtryckssensor på skärmen.",
+    "price": 2.639,
+    "imageCover": "pro-3-cover.jpg",
+    "images": ["pro-3-1.jpg", "pro-3-2.jpg", "pro-3-3.jpg"],
+    "ratingsAverage": 4.4,
+    "retingsQuantity": 6
+  },
+  {
+    "id": 4,
+    "title": "Samsung 32 GB Galaxy A20e Smartphone, Svart",
+    "availibility": 6,
+    "description": "SGalaxy A20e är utrustad med en skarp, högupplöst skärm, för att du ska kunna se ännu mer av det du gillar – oavsett om du vill streama favoritserien, se detaljerna i varje bild eller spela för fullt. Fånga alla ögonblick med en profesionell kamera. Hitta skärpan i mörkret med Dual Aperture.",
+    "price": 2.641,
+    "imageCover": "pro-4-cover.jpg",
+    "images": ["pro-4-1.jpg", "pro-4-2.jpg", "pro-4-3.jpg"],
+    "ratingsAverage": 4.1,
+    "retingsQuantity": 2
+  },
+  {
+    "id": 5,
+    "title": "Samsung Galaxy A20e SM-A202F 14.7 cm (5.8) 3 GB 32",
+    "availibility": 5,
+    "description": "Samsung Galaxy A20e SM-A202F 14.7 cm (5.8) 3 GB 32 GB Dual SIM 4G Black 3000 mAh - Samsung Galaxy A20e SM-A202F, 14.7 cm (5.8), 720 x 1560 pixels, 3 GB, 32 GB, 13 MP, Black",
+    "price": 2.24,
+    "imageCover": "pro-5-cover.jpg",
+    "images": ["pro-5-1.jpg", "pro-5-2.jpg", "pro-5-3.jpg"],
+    "ratingsAverage": 4.8,
+    "retingsQuantity": 1
+  }
+]

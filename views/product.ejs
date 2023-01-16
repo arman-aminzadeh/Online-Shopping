@@ -1,0 +1,55 @@
+
+<div class="product-detail">
+    <div class="images">
+        <div class="big-img">
+            <img class="big-pic" src="/img/products/<%= product.imageCover %>" id="main-img" alt="product picture">
+        </div>
+        <div class="small-imgs">
+            <img class="small-pic"  src="/img/products/<%= product.imageCover %>" alt="product picture">
+            <img class="small-pic"  src="/img/products/<%= product.images[0] %>" alt="product picture">
+            <img class="small-pic"  src="/img/products/<%= product.images[1] %>" alt="product picture">
+            <img class="small-pic"  src="/img/products/<%= product.images[2] %>" alt="product picture">
+        </div>
+    </div>
+    <div class="details">
+        <h6> Mobile/Detail</h6>
+        <h3><%= product.title %></h3>
+        <h2><%= product.price %> $</h2>
+        <a class="buy-btn" href="#">Add to bascket</a>
+        <h3>Details</h3>
+        <p><%= product.description %></p>
+    </div>
+</div>
+<div class="user-review">
+    <form class="review-form">
+        <div class="review-info">
+            <img class="user-pic-review" src="img/users/<%= user.photo %>" alt="<%= user.username %>">
+            <label for="review"> Leave a review</label>
+            <textarea name="review" placeholder="Give us your feedback.." id="review" class="review"></textarea>
+        </div>
+        <button class="submit-review">submit</button>
+    </form>
+</div>
+<div class="reviews-section">
+    <div class="review-heading">
+        <h3>Reviews</h3>
+    </div>
+    <div class="reviews-cards">
+        <% product.reviews.forEach((re) => { %>
+            <div class="review-card">
+                <div class="user-info">
+                    <div class="user-name">
+                        <img class="user-pic" src="img/users/<%= re.user.photo %>" alt="<%= re.user.username %>">
+                        <h5><%= re.user.username %></h5>
+                    </div>
+                    <div class="review-date">
+                        <p><%= re.createdAt.toLocaleString() %></p>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p><%= re.review %></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

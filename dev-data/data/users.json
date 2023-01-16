@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "62e01b4358481708f2df38ac",
+    "username": "selda",
+    "email": "selda@gmail.com",
+    "photo": "selda.jpg",
+    "role": "user",
+    "password": "$2a$10$v/bMshQ2fdLOXWM/FGrjwOWpPZhYz.R22.0xf//oxmzn8DUfT173u"
+  },
+  {
+    "_id": "62e022556c6207f85a4e454e",
+    "username": "arman",
+    "email": "arman@gmail.com",
+    "photo": "arman.jpg",
+    "role": "admin",
+    "password": "$2a$10$qiv4ms9clbvUYiKlof9AGOEy9w/.tMAgWxdDqc3mqAkxg7mZZGXDC"
+  },
+  {
+    "_id": "62ed49f54cdf5ee45d795218",
+    "username": "test",
+    "email": "test@gmail.com",
+    "photo": "test.jpg",
+    "role": "user",
+    "password": "$2a$10$KGatycGW0tBfDNi/F24Tb.K21PZFVw9GbrINEqaZTR4LTi.n4Ql8S"
+  }
+]
