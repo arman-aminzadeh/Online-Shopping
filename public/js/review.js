@@ -22,7 +22,7 @@ export const submitReview = async (review) => {
     if (res.data.status === "Success") {
       showAlert("success", "Your Review Submited!");
       window.setTimeout(() => {
-        location.assign("/");
+        location.assign(currentUrl);
       }, 3000);
     } else {
       showAlert("error", "Try Again!");

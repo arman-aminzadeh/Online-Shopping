@@ -24,9 +24,6 @@ exports.createReview = async (req, res, next) => {
     // allow nested routes
     if (!req.body.product) req.body.product = req.params.productId;
     if (!req.body.user) req.body.user = req.user.id;
-    const product = await Product.findById(req.params.productId);
-    console.log(product);
-    console.log(product.id);
     const review = await Review.create(req.body);
     res.status(201).json({
       status: "Success",
