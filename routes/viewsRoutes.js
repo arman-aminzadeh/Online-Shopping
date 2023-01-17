@@ -24,6 +24,7 @@ router.post(
 //router.route("/signup").get(authController.getSignupUser);
 //router.route("/signup").post(authController.signupUser);
 router.route("/login").get(viewsController.getLoginform);
+router.route("/signup").get(viewsController.getSignUpform);
 //router.route("/logout").get(authController.getLogOut);
 //router.route("/login").post(authController.loginUser);
 
