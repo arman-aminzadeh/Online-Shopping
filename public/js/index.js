@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import { login, logOut } from "./login";
+import { signUpUser } from "./signUpUser";
 import { imageChanger } from "./imageChange";
 import { uppdateData } from "./uppdateSetting";
 import { uppdatePassword } from "./uppdateSetting";
@@ -15,6 +16,7 @@ const logOutBtn = document.querySelector(".btn-log-out");
 const userUpdateData = document.querySelector(".user-update");
 const updatePasswordForm = document.querySelector(".password-change");
 const reviewBtn = document.querySelector("form");
+const signUpForm = document.querySelector(".sign-up-form");
 
 if (smallPic & mainImage) {
   imageChanger(smallPic, mainImage);
@@ -22,7 +24,7 @@ if (smallPic & mainImage) {
 
 if (reviewBtn) {
   reviewBtn.addEventListener("submit", (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const review = reviewBtn.getElementsByClassName("review").review.value;
     console.log(review);
     submitReview(review);
@@ -63,4 +65,16 @@ if (updatePasswordForm) {
   });
 }
 
+if (signUpForm) {
+  signUpForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = new FormData();
+    form.append("username", signUpForm.username.value);
+    form.append("email", signUpForm.email.value);
+    form.append("password", signUpForm.password.value);
+    form.append("confirmPassword", signUpForm.confirmPassword.value);
+    form.append("photo", signUpForm.photo.files[0]);
+    signUpUser(form);
+  });
+}
 // passwordCurrent, password, passwordConfirm;

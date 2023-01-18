@@ -24,6 +24,9 @@ exports.getSignupUser = (req, res) => {
 exports.getLoginform = (req, res) => {
   res.status(200).render("login");
 };
+exports.getSignUpform = (req, res) => {
+  res.status(200).render("signUp");
+};
 
 exports.getMe = (req, res) => {
   res.render("me");

@@ -93,12 +93,6 @@
     border-radius: 8px; 
 }
 
-.form-title {
-    font-size: 2.4 em;
-    font-weight: 600;
-    margin-bottom: 35px;
-    text-align: center;
-}
 form {
     width: 380px;
     margin: 0 auto;
@@ -106,6 +100,12 @@ form {
     background: rgb(243, 243, 243);
     border-radius: 16px;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+}
+.form-title {
+    font-size: 2.4 em;
+    font-weight: 600;
+    margin-bottom: 35px;
+    text-align: center;
 }
 label {
     display: block;
@@ -127,6 +127,23 @@ input{
     color: rgb(229, 233, 233);
     background-color: rgb(60, 134, 66);
 }
+
+.form-group {
+    width: auto;
+    padding: 5px;
+}
+.form-group label {
+    width: auto;
+}
+.form-group .email {
+    margin: 0;
+}
+.upload-pic-sign {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 body {
 width: 100vw;
 height: 100vh;
