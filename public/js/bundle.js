@@ -11184,6 +11184,7 @@ var signUpUser = /*#__PURE__*/function () {
             _context.next = 4;
             return (0, _axios.default)({
               method: "POST",
+              // {{URL}}api/v1/users/signup
               url: "http://localhost:3000/api/v1/users/signup",
               data: data
             });
@@ -11628,7 +11629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33145" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35321" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -6,9 +6,11 @@ export const signUpUser = async (data) => {
     console.log(data);
     const res = await axios({
       method: "POST",
+    // {{URL}}api/v1/users/signup
       url: "http://localhost:3000/api/v1/users/signup",
       data,
     });
+
     console.log(data);
     console.log(res.data.status);
     if (res.data.status === "success") {
