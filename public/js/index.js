@@ -15,17 +15,17 @@ const loginForm = document.querySelector(".login-form");
 const logOutBtn = document.querySelector(".btn-log-out");
 const userUpdateData = document.querySelector(".user-update");
 const updatePasswordForm = document.querySelector(".password-change");
-const reviewBtn = document.querySelector("form");
+const reviewForm = document.querySelector(".review-form");
 const signUpForm = document.querySelector(".sign-up-form");
 
 if (smallPic & mainImage) {
   imageChanger(smallPic, mainImage);
 }
 
-if (reviewBtn) {
-  reviewBtn.addEventListener("submit", (e) => {
+if (reviewForm) {
+  reviewForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const review = reviewBtn.getElementsByClassName("review").review.value;
+    const review = reviewForm.getElementsByClassName("review").review.value;
     console.log(review);
     submitReview(review);
   });
@@ -68,13 +68,12 @@ if (updatePasswordForm) {
 if (signUpForm) {
   signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const username = signUpForm.username.value;
+    const email = signUpForm.email.value;
+    const password = signUpForm.password.value;
+    const confirmPassword = signUpForm.confirmPassword.value;
     const form = new FormData();
-    form.append("username", signUpForm.username.value);
-    form.append("email", signUpForm.email.value);
-    form.append("password", signUpForm.password.value);
-    form.append("confirmPassword", signUpForm.confirmPassword.value);
-    form.append("photo", signUpForm.photo.files[0]);
-    signUpUser(form);
+    signUpUser(username, email, password, confirmPassword);
   });
 }
 // passwordCurrent, password, passwordConfirm;

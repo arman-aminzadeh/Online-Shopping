@@ -11173,7 +11173,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var signUpUser = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(username, email, password, confirmPassword) {
     var res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -11184,9 +11184,13 @@ var signUpUser = /*#__PURE__*/function () {
             _context.next = 4;
             return (0, _axios.default)({
               method: "POST",
-              // {{URL}}api/v1/users/signup
               url: "http://localhost:3000/api/v1/users/signup",
-              data: data
+              data: {
+                username: username,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+              }
             });
           case 4:
             res = _context.sent;
@@ -11213,7 +11217,7 @@ var signUpUser = /*#__PURE__*/function () {
       }
     }, _callee, null, [[0, 10]]);
   }));
-  return function signUpUser(_x) {
+  return function signUpUser(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -11377,7 +11381,7 @@ var submitReview = /*#__PURE__*/function () {
             if (res.data.status === "Success") {
               (0, _alert.showAlert)("success", "Your Review Submited!");
               window.setTimeout(function () {
-                location.assign(currentUrl);
+                location.assign("/");
               }, 3000);
             } else {
               (0, _alert.showAlert)("error", "Try Again!");
@@ -11548,15 +11552,15 @@ var loginForm = document.querySelector(".login-form");
 var logOutBtn = document.querySelector(".btn-log-out");
 var userUpdateData = document.querySelector(".user-update");
 var updatePasswordForm = document.querySelector(".password-change");
-var reviewBtn = document.querySelector("form");
+var reviewForm = document.querySelector(".review-form");
 var signUpForm = document.querySelector(".sign-up-form");
 if (smallPic & mainImage) {
   (0, _imageChange.imageChanger)(smallPic, mainImage);
 }
-if (reviewBtn) {
-  reviewBtn.addEventListener("submit", function (e) {
+if (reviewForm) {
+  reviewForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    var review = reviewBtn.getElementsByClassName("review").review.value;
+    var review = reviewForm.getElementsByClassName("review").review.value;
     console.log(review);
     (0, _review.submitReview)(review);
   });
@@ -11594,13 +11598,12 @@ if (updatePasswordForm) {
 if (signUpForm) {
   signUpForm.addEventListener("submit", function (e) {
     e.preventDefault();
+    var username = signUpForm.username.value;
+    var email = signUpForm.email.value;
+    var password = signUpForm.password.value;
+    var confirmPassword = signUpForm.confirmPassword.value;
     var form = new FormData();
-    form.append("username", signUpForm.username.value);
-    form.append("email", signUpForm.email.value);
-    form.append("password", signUpForm.password.value);
-    form.append("confirmPassword", signUpForm.confirmPassword.value);
-    form.append("photo", signUpForm.photo.files[0]);
-    (0, _signUpUser.signUpUser)(form);
+    (0, _signUpUser.signUpUser)(username, email, password, confirmPassword);
   });
 }
 // passwordCurrent, password, passwordConfirm;
@@ -11629,7 +11632,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35321" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35323" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -22,7 +22,9 @@ router
 
 router.route("/login").post(authController.loginUser);
 router.route("/logout").get(authController.logOutUser);
-router.route("/signup").post(authController.signupUser);
+router
+  .route("/signup")
+  .post(authController.signupUser);
 router
   .route("/")
   .get(usersController.getAllUsers)
