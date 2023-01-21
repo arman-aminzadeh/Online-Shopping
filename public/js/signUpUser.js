@@ -8,7 +8,6 @@ export const signUpUser = async (
   confirmPassword
 ) => {
   try {
-    console.log(data);
     const res = await axios({
       method: "POST",
       url: "http://localhost:3000/api/v1/users/signup",
@@ -19,10 +18,9 @@ export const signUpUser = async (
         confirmPassword,
       },
     });
-
-    console.log(data);
+    console.log("working till here 2 ....");
     console.log(res.data.status);
-    if (res.data.status === "success") {
+    if (res.data.status === "sucess") {
       showAlert("success", "Signed Up Successfully!");
       window.setTimeout(() => {
         location.assign("/");
@@ -31,6 +29,7 @@ export const signUpUser = async (
       showAlert("error", "Try Again:::::!");
     }
   } catch (err) {
+    console.log(err);
     showAlert("error", "Try Again!:::::");
   }
 };

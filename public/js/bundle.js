@@ -11180,8 +11180,7 @@ var signUpUser = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            console.log(data);
-            _context.next = 4;
+            _context.next = 3;
             return (0, _axios.default)({
               method: "POST",
               url: "http://localhost:3000/api/v1/users/signup",
@@ -11192,11 +11191,11 @@ var signUpUser = /*#__PURE__*/function () {
                 confirmPassword: confirmPassword
               }
             });
-          case 4:
+          case 3:
             res = _context.sent;
-            console.log(data);
+            console.log("working till here 2 ....");
             console.log(res.data.status);
-            if (res.data.status === "success") {
+            if (res.data.status === "sucess") {
               (0, _alert.showAlert)("success", "Signed Up Successfully!");
               window.setTimeout(function () {
                 location.assign("/");
@@ -11206,16 +11205,17 @@ var signUpUser = /*#__PURE__*/function () {
             }
             _context.next = 13;
             break;
-          case 10:
-            _context.prev = 10;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
             (0, _alert.showAlert)("error", "Try Again!:::::");
           case 13:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 9]]);
   }));
   return function signUpUser(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -11632,7 +11632,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35323" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36561" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
