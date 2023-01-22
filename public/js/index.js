@@ -14,7 +14,7 @@ const smallPic = document.getElementsByClassName("small-pic");
 const loginForm = document.querySelector(".login-form");
 const logOutBtn = document.querySelector(".btn-log-out");
 const userUpdateData = document.querySelector(".user-update");
-const updatePasswordForm = document.querySelector(".password-change");
+const updatePasswordForm = document.querySelector(".user-pass-update");
 const reviewForm = document.querySelector(".review-form");
 const signUpForm = document.querySelector(".sign-up-form");
 
@@ -53,15 +53,15 @@ if (userUpdateData) {
   });
 }
 if (updatePasswordForm) {
-  updatePasswordForm.addEventListener("submit", (e) => {
+  updatePasswordForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const passwordCurrent =
-      updatePasswordForm.querySelector(".current-pass").value;
-    const password = updatePasswordForm.querySelector(".new-pass").value;
-    const passwordConfirm =
-      updatePasswordForm.querySelector(".new-pass-confirm").value;
-    console.log(passwordCurrent, password, passwordConfirm);
-    uppdatePassword(passwordCurrent, password, passwordConfirm);
+    const passwordCurrent = updatePasswordForm.currentPassword.value;
+    const password = updatePasswordForm.newPassword.value;
+    const confirmPassword = updatePasswordForm.newPasswordConfirm.value;
+    await uppdatePassword(passwordCurrent, password, confirmPassword);
+    (updatePasswordForm.currentPassword.value = ""),
+      (updatePasswordForm.newPassword.value = ""),
+      (updatePasswordForm.newPasswordConfirm.value = "");
   });
 }
 

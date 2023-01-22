@@ -21,7 +21,7 @@ export const uppdateData = async (data) => {
 export const uppdatePassword = async (
   passwordCurrent,
   password,
-  passwordConfirm
+  confirmPassword
 ) => {
   try {
     const res = await axios({
@@ -30,11 +30,10 @@ export const uppdatePassword = async (
       data: {
         passwordCurrent,
         password,
-        passwordConfirm,
+        confirmPassword,
       },
     });
     console.log("working till here!!");
-    console.log(passwordCurrent, password, passwordConfirm);
     console.log(res.data.status);
     if (res.data.status === "success") {
       showAlert("success", "PASSWORD updated successfully!");

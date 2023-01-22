@@ -34,7 +34,7 @@
             <div class="user-info-update">
                 <% if(user) { %>
                     <div class="user-username">
-                        <label for="username">Username:</label>
+                        <label for="username">Username</label>
                         <input type="text" placeholder="Change Username" class="new-username" value="<%= user.username %>" name="username" >
                     </div>
                     <div class="email">
@@ -58,20 +58,20 @@
         </div> -->
         <form class="user-pass-update">
             <div class="password-change">
-                    <div class="current-password">
-                        <label for="current password" class="cur-pass">Current Password</label>
-                        <input type="text" class="current-pass" placeholder="Current Password">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="text" class="current-pass" placeholder="Current Password" name="currentPassword">
                     </div>
-                    <div class="new-password">
-                        <label for="new password" class="new-pass">New Password</label>
-                        <input type="text" class="new-pass" placeholder="New Password">
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="text" class="new-pass" placeholder="New Password" name="newPassword">
                     </div>
-                    <div class="new-password">
-                        <label for="new password" class="new-pass">Confirm New Password</label>
-                        <input type="text" class="new-pass-confirm" placeholder="Confirm New Password">
+                    <div class="form-group">
+                        <label for="newPasswordConfirm">Confirm New Password</label>
+                        <input type="text" class="new-pass-confirm" placeholder="Confirm New Password" name="newPasswordConfirm">
                     </div>
                 <div>
-                    <button class="save-setting">Save</button>
+                    <button type ="submit" class="save-setting">Save</button>
                 </div>
             </div>
         </form>

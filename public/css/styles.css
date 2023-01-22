@@ -470,7 +470,7 @@ align-items: center;
 }
 .user-update {
     margin-bottom: 30px;
-    padding: 30px;
+    padding: 30 30 70 30;
 }
 .user-username{
     margin-bottom: 5px;
@@ -512,7 +512,6 @@ align-items: center;
 }
 .save-setting{
     float: right;
-    margin-top: -20px;
     background-color: #20bf6b;
     border: #20bf6b;
     border-radius: 10px;
@@ -521,17 +520,21 @@ align-items: center;
 }
 .user-pass-update {
     margin-bottom: 40px;
+    padding: 30 30 70 30;
 }
-.inputs {
-    width: 60%;
+
+.current-pass {
+    width: 100%;
     margin: 5px 0;
     padding: 5px;
 }
-.cur-pass {
-    width: 100%;
-    padding: 5px 0px;
-}
 .new-pass {
     width: 100%;
-    padding: 5px 0px;
+    margin: 5px 0;
+    padding: 5px;
+}
+.new-pass-confirm {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
 }
