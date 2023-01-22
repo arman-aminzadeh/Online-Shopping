@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "admin"],
     default: "user",
   },
-  photo: String,
+  photo: {
+    type: String,
+    default: "default.png",
+  },
   password: {
     type: String,
     requierd: [true, "Please Enter password"],
