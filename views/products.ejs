@@ -3,7 +3,9 @@
   <div class="cards">
     <% products.forEach(product => { %>
     <div class="card">
-      <img src="img/products/<%= product.imageCover %>", alt="<%= product.title %>">
+      <div class="cover-img">
+        <img src="img/products/<%= product.imageCover %>", alt="<%= product.title %>">
+      </div>
       <div class="card-text">
         <h2><%= product.title %></h2>
         <p> <strong>Description:</strong> <%= product.description %></p>
