@@ -5,6 +5,7 @@ import { imageChanger } from "./imageChange";
 import { uppdateData } from "./uppdateSetting";
 import { uppdatePassword } from "./uppdateSetting";
 import { submitReview } from "./review";
+import { buyProduct } from "./stripe";
 import "core-js";
 
 // values
@@ -17,6 +18,7 @@ const userUpdateData = document.querySelector(".user-update");
 const updatePasswordForm = document.querySelector(".user-pass-update");
 const reviewForm = document.querySelector(".review-form");
 const signUpForm = document.querySelector(".sign-up-form");
+const buyProductBtn = document.querySelector(".buy-btn");
 
 if (smallPic & mainImage) {
   imageChanger(smallPic, mainImage);
@@ -74,6 +76,15 @@ if (signUpForm) {
     const confirmPassword = signUpForm.confirmPassword.value;
     const form = new FormData();
     signUpUser(username, email, password, confirmPassword);
+  });
+}
+
+if (buyProductBtn) {
+  buyProductBtn.addEventListener("click", (e) => {
+    e.target.textContent = "Processing..";
+    const productId = e.target.dataset.productId;
+    console.log(productId);
+    buyProduct(productId);
   });
 }
 // passwordCurrent, password, passwordConfirm;

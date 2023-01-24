@@ -18,8 +18,8 @@ exports.getCheckOutSession = async (req, res, next) => {
       line_items: [
         {
           price_data: {
-            currency: "usd",
-            unit_amount: (49, 99 * 100),
+            currency: "sek",
+            unit_amount: 49 * 100,
             product_data: {
               name: `${product.title}`,
               description: `${product.description}`,
