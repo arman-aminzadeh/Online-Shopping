@@ -10,6 +10,8 @@ exports.getCheckOutSession = async (req, res, next) => {
   // Get the currently booked product
   try {
     const product = await Product.findById(req.params.productId);
+    console.log(product.title);
+    console.log(product.price);
     // create check out session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -19,11 +21,10 @@ exports.getCheckOutSession = async (req, res, next) => {
         {
           price_data: {
             currency: "sek",
-            unit_amount: 49 * 100,
             product_data: {
               name: `${product.title}`,
-              description: `${product.description}`,
             },
+            unit_amount: 49 * 100,
           },
           quantity: 1,
         },

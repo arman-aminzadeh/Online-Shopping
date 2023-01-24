@@ -83,7 +83,6 @@ if (buyProductBtn) {
   buyProductBtn.addEventListener("click", (e) => {
     e.target.textContent = "Processing..";
     const productId = e.target.dataset.productId;
-    console.log(productId);
     buyProduct(productId);
   });
 }
