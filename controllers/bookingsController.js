@@ -1,9 +1,10 @@
 const dotenv = require("dotenv");
-dotenv.config({ path: "config.env" });
-//const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-const stripe = require("stripe")(
-  "sk_test_51MNiROHGdPw4SClZgdwvFfNRgpmNCuydWKjKdxmXXxCGU246KPsZMLuS7SPIhTGcvBwMF1ODrf9816wlcJmqfY1k00KtjeaIbF"
-);
+dotenv.config({ path: "./config.env" });
+console.log(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+//const stripe = require("stripe")(
+//  "sk_test_51MNiROHGdPw4SClZgdwvFfNRgpmNCuydWKjKdxmXXxCGU246KPsZMLuS7SPIhTGcvBwMF1ODrf9816wlcJmqfY1k00KtjeaIbF"
+//);
 const Product = require("../models/product");
 
 exports.getCheckOutSession = async (req, res, next) => {
