@@ -18,6 +18,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 app.use(
   helmet.contentSecurityPolicy({
+    contentSecurityPolicy: false,
     directives: {
       defaultSrc: ["'self'", "data:", "blob:"],
 

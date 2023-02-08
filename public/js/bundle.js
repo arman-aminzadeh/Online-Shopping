@@ -11421,7 +11421,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var stripe = Stripe("pk_test_51MNiROHGdPw4SClZ4zaDLGoa02tnuRV2yluNpIeZ1FYOpHRrcfp6q1oLwsSgWn4am58mnICyk0r5LCvwgnRP5pFI00eQNyHTly");
 var buyProduct = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(productId) {
-    var session;
+    var session, sessionId;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -11432,23 +11432,26 @@ var buyProduct = /*#__PURE__*/function () {
           case 3:
             session = _context.sent;
             console.log("before redirection....", session);
-            _context.next = 7;
+            sessionId = session.data.session.id;
+            _context.next = 8;
             return stripe.redirectToCheckout({
               sessionId: session.data.session.id
+              //sessionId: session.id
             });
-          case 7:
-            _context.next = 12;
+          case 8:
+            console.log("working til here:::", sessionId);
+            _context.next = 14;
             break;
-          case 9:
-            _context.prev = 9;
+          case 11:
+            _context.prev = 11;
             _context.t0 = _context["catch"](0);
             console.log(_context.t0);
-          case 12:
+          case 14:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[0, 11]]);
   }));
   return function buyProduct(_x) {
     return _ref.apply(this, arguments);
@@ -11714,7 +11717,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36717" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40507" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

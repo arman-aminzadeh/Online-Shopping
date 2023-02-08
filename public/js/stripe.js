@@ -11,9 +11,12 @@ export const buyProduct = async (productId) => {
       `http://localhost:3000/api/v1/bookings/checkout-session/${productId}`
     );
     console.log("before redirection....", session);
+    const sessionId = session.data.session.id;
     await stripe.redirectToCheckout({
       sessionId: session.data.session.id,
+      //sessionId: session.id
     });
+    console.log("working til here:::", sessionId);
   } catch (err) {
     console.log(err);
   }
